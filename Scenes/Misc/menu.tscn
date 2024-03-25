@@ -1,0 +1,205 @@
+[gd_scene load_steps=20 format=3 uid="uid://fc1yk0f02mye"]
+
+[ext_resource type="Script" path="res://Scripts/Misc/menu.gd" id="1_01xpw"]
+[ext_resource type="FontFile" uid="uid://dfisboukexccb" path="res://Assets/Fonts/OldeEnglish.ttf" id="1_j8ioo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rc203"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hbt6a"]
+bg_color = Color(0.894118, 0.619608, 0.65098, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h0at7"]
+bg_color = Color(0.231373, 0.231373, 0.231373, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="Gradient" id="Gradient_6etbk"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0.290196)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_766rr"]
+gradient = SubResource("Gradient_6etbk")
+width = 32
+height = 32
+fill_from = Vector2(0.256881, 0.00917431)
+fill_to = Vector2(0.986239, 0.0321101)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qcdtb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wmuhg"]
+bg_color = Color(0.894118, 0.619608, 0.65098, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nxhem"]
+bg_color = Color(0.231373, 0.231373, 0.231373, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p168f"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_as4q0"]
+bg_color = Color(0.894118, 0.619608, 0.65098, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ys1eu"]
+bg_color = Color(0.231373, 0.231373, 0.231373, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="Animation" id="Animation_eqcid"]
+resource_name = "start_fade"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_gxacj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xpnrb"]
+_data = {
+"RESET": SubResource("Animation_gxacj"),
+"start_fade": SubResource("Animation_eqcid")
+}
+
+[sub_resource type="Gradient" id="Gradient_6ehs4"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lx7l3"]
+gradient = SubResource("Gradient_6ehs4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rres1"]
+texture = SubResource("GradientTexture2D_lx7l3")
+texture_margin_left = 50.0
+texture_margin_right = 45.0
+expand_margin_left = 2000.0
+expand_margin_right = 2000.0
+region_rect = Rect2(10, 0, 2, 0)
+modulate_color = Color(0.564706, 0.564706, 0.564706, 0.45098)
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_01xpw")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 262.0
+offset_top = 477.0
+offset_right = 662.0
+offset_bottom = 701.0
+theme_override_constants/separation = 50
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_rc203")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hbt6a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h0at7")
+text = "START GAME"
+icon = SubResource("GradientTexture2D_766rr")
+
+[node name="Load" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_qcdtb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wmuhg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nxhem")
+text = "LOAD GAME"
+icon = SubResource("GradientTexture2D_766rr")
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_p168f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_as4q0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ys1eu")
+text = "QUIT GAME"
+icon = SubResource("GradientTexture2D_766rr")
+
+[node name="Animations" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xpnrb")
+}
+autoplay = "start_fade"
+
+[node name="GameName" type="Label" parent="."]
+layout_mode = 0
+offset_left = 513.0
+offset_top = 107.0
+offset_right = 1403.0
+offset_bottom = 292.0
+theme_override_fonts/font = ExtResource("1_j8ioo")
+theme_override_font_sizes/font_size = 200
+theme_override_styles/normal = SubResource("StyleBoxTexture_rres1")
+text = "Living With"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
